@@ -7,9 +7,9 @@
     "action":{
         "default_popup": "web/popup.html",
         "default_icon": {
-            "16": "web/icons/icon-16.png",
-            "48": "web/icons/icon-48.png",
-            "128": "web/icons/icon-128.png"
+            "16": "icons/icon-16.png",
+            "48": "icons/icon-48.png",
+            "128": "icons/icon-128.png"
         }
     },
     "content_scripts": [
@@ -22,8 +22,8 @@
         "service_worker": "web/JS/background.js"
     },
     "icons": {
-        "16": "web/icons/icon-16.png",
-        "48": "web/icons/icon-48.png",
-        "128": "web/icons/icon-128.png"
+        "16": "icons/icon-16.png",
+        "48": "icons/icon-48.png",
+        "128": "icons/icon-128.png"
     }
 }
