@@ -1,4 +1,4 @@
-        Day 1:
+        Day 1
 
     --Manifestet--
 
@@ -9,9 +9,11 @@ content scripts låter oss köra vår js på alla sidora (Kommer nog att begrän
 background för att kunna köras i bakgrunden och hantera meddelanden.
 
     --Popup.hmtl--
+
 Popup med en knapp för att analyzera e-post
 
     --Popup.js--
+
 För tillfället så funkar tillägget med knappen då texten loggas.
 Förvånansvärt enkelt måste jag säga att göra chrome tillägg.
 Detta funkar alltså lite som  en controller och skickar meddelandet till content scriptet.
@@ -21,4 +23,15 @@ Skickar ett meddelande till content scriptet med objektet "analyze" eftersom det
 Hanterar även eventuella fel.
 
     --Content_script.js--
+
 Funkar som en agent och har hand om själva logiken.
+Alltså lyssanar efter olika actions och gör objekt av texten som kommer med i detta fallet.
+
+    --background.js--
+    
+Skapar möjligheten att användaren kan markera text och skicka det till extensionen.
+Kollar ifall menyvalet har gjorts och om det finns text markerad.
+Skickar det sedan som en action till Content_script.js
+
+
+        Day 2
