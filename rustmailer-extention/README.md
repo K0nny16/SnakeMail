@@ -1,4 +1,3 @@
-
 # RustMailer Chrome Extension
 
 RustMailer is a sleek and modern Chrome extension designed to analyze emails directly from Gmail. With its intuitive interface and powerful functionality, RustMailer is built to streamline email analysis, combining the aesthetics of a Rust-inspired theme with efficient JavaScript logic.
@@ -14,7 +13,7 @@ RustMailer is a sleek and modern Chrome extension designed to analyze emails dir
 
 1. **Clone or download this repository**:
    ```bash
-   git clone https://github.com/yourusername/rustmailer.git
+   git clone https://github.com/K0nny16/rustmailer.git
    ```
 
 2. **Load the extension in Chrome**:
@@ -43,18 +42,18 @@ RustMailer is a sleek and modern Chrome extension designed to analyze emails dir
 
 ```
 rustmailer/
-├── icons/                  # Folder for icons (16x16, 48x48, 128x128)
+├── icons/                    # Folder for icons (16x16, 48x48, 128x128)
 │   ├── rustmailer-icon-16.png
 │   ├── rustmailer-icon-48.png
 │   ├── rustmailer-icon-128.png
 ├── web/
 │   ├── JS/
-│   │   ├── popup.js         # Handles popup logic
+│   │   ├── popup.js          # Handles popup logic
 │   │   ├── content_script.js # Handles message and email analysis logic
-│   │   ├── background.js    # Manages context menu
-│   ├── popup.html           # Popup interface
-│   ├── styles.css           # Styling for the popup
-├── manifest.json           # Chrome extension configuration
+│   │   ├── background.js     # Manages context menu
+│   ├── popup.html            # Popup interface
+│   ├── styles.css            # Styling for the popup
+├── manifest.json             # Chrome extension configuration
 ```
 
 ## Technologies Used
@@ -74,8 +73,8 @@ Contributions are welcome! If you'd like to improve this project:
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
+This project is licensed under the MIT License. See the [LICENSE](../LICENSE.txt) file for details.
 
 ## Author
 
-- **Your Name** - [Your GitHub Profile](https://github.com/yourusername)
+- **Karl Kowal** - [Your GitHub Profile](https://github.com/K0nny16)
