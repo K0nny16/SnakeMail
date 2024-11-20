@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "RustyMailer",
+    "version": "1.0",
+    "description": "Easy way to analyze emails with the power of Rust and WASM.",
+    "permissions": ["activeTab","scripting","contextMenus"],
+    "action":{
+        "default_popup": "web/popup.html",
+        "default_icon": {
+            "16": "web/icons/icon-16.png",
+            "48": "web/icons/icon-48.png",
+            "128": "web/icons/icon-128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["web/JS/content_script.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "web/JS/background.js"
+    },
+    "icons": {
+        "16": "web/icons/icon-16.png",
+        "48": "web/icons/icon-48.png",
+        "128": "web/icons/icon-128.png"
+    }
+}

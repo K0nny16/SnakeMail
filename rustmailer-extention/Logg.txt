@@ -1,0 +1,24 @@
+        Day 1:
+
+    --Manifestet--
+
+Skapat manifestet med version av chrome extensions api v3.
+Namn och beskrivning av vad extensionen kommmer att göra.
+Satt en action så att popuppen öppnas när användaren klickar.
+content scripts låter oss köra vår js på alla sidora (Kommer nog att begränsas senare)
+background för att kunna köras i bakgrunden och hantera meddelanden.
+
+    --Popup.hmtl--
+Popup med en knapp för att analyzera e-post
+
+    --Popup.js--
+För tillfället så funkar tillägget med knappen då texten loggas.
+Förvånansvärt enkelt måste jag säga att göra chrome tillägg.
+Detta funkar alltså lite som  en controller och skickar meddelandet till content scriptet.
+
+Hittar den aktiva fliken där användaren är.
+Skickar ett meddelande till content scriptet med objektet "analyze" eftersom det är det den lyssnar efter.
+Hanterar även eventuella fel.
+
+    --Content_script.js--
+Funkar som en agent och har hand om själva logiken.
