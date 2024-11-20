@@ -13,7 +13,7 @@ RustMailer is a sleek and modern Chrome extension designed to analyze emails dir
 
 1. **Clone or download this repository**:
    ```bash
-   git clone https://github.com/K0nny16/rustmailer.git
+   git clone https://github.com/K0nny16/RustMailer.git
    ```
 
 2. **Load the extension in Chrome**:
