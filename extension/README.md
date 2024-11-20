@@ -77,4 +77,4 @@ This project is licensed under the MIT License. See the [LICENSE](../LICENSE.txt
 
 ## Author
 
-- **Karl Kowal** - [Your GitHub Profile](https://github.com/K0nny16)
+- **Karl Kowal** - [Profile](https://github.com/K0nny16)

@@ -1,132 +1,132 @@
 # RustMailer Project
 
-RustMailer är ett avancerat verktyg för e-postanalys som kombinerar ett Chrome-tillägg med en kraftfull backend byggd i Rust. Projektet är designat för att vara snabbt, användarvänligt och robust, och det erbjuder en modern lösning för att extrahera, analysera och hantera e-postdata.
+RustMailer is an advanced email analysis tool that combines a Chrome extension with a powerful backend built in Rust. The project is designed to be fast, user-friendly, and robust, offering a modern solution for extracting, analyzing, and managing email data.
 
-## Funktioner
+## Features
 
-- **Chrome-tillägg**:
-  - Analysera e-postinnehåll direkt från Gmail.
-  - Möjlighet att analysera markerad text med högerklicksmenyn.
-  - Responsiv design med ett mörkt, Rust-inspirerat tema.
+- **Chrome Extension**:
+  - Analyze email content directly from Gmail.
+  - Option to analyze selected text via the context menu.
+  - Responsive design with a dark, Rust-inspired theme.
 
-- **Rust-backend**:
-  - Bearbetning av e-postdata för avancerad analys.
-  - Effektiv hantering av stora datamängder.
-  - Integrerad med Chrome-tillägget via API-anrop.
+- **Rust Backend**:
+  - Processes email data for advanced analysis.
+  - Efficient handling of large datasets.
+  - Integrated with the Chrome extension via API requests.
 
 ---
 
-## Projektstruktur
+## Project Structure
 
 ```
 RustMailer/
-├── extension/             # Chrome-tilläggskod
-│   ├── icons/             # Ikoner för tillägget
-│   ├── web/               # HTML, CSS och JS för popup och scripts
+├── extension/             # Chrome extension code
+│   ├── icons/             # Extension icons
+│   ├── web/               # HTML, CSS, and JS for popup and scripts
 │   │   ├── popup.html
 │   │   ├── styles.css
 │   │   ├── popup.js
 │   │   ├── content_script.js
 │   │   ├── background.js
 │   ├── manifest.json
-│   ├── README.md          # Individuell README för tillägget
-├── backend/               # Rust-backend
-│   ├── src/               # Rust-källkod
+│   ├── README.md          # Individual README for the extension
+├── backend/               # Rust backend
+│   ├── src/               # Rust source code
 │   │   ├── main.rs
 │   │   ├── handlers/
 │   │   ├── models/
 │   │   ├── utils/
-│   ├── Cargo.toml         # Rust-konfiguration
-│   ├── README.md          # Individuell README för backenden
-├── LICENSE                # Projektets licens
-├── README.md              # Projektöversikt (den här filen)
+│   ├── Cargo.toml         # Rust configuration
+│   ├── README.md          # Individual README for the backend
+├── LICENSE                # Project license
+├── README.md              # Project overview (this file)
 ```
 
 ---
 
-## Installation och Användning
+## Installation and Usage
 
-### **1. Chrome-tillägg**
-Följ dessa steg för att installera och använda tillägget:
+### **1. Chrome Extension**
+Follow these steps to install and use the extension:
 
-1. Navigera till [RustMailer Extension README](./extension/README.md) för att få detaljerade instruktioner om installationen.
-2. Starta Gmail och interagera med e-postmeddelanden direkt via tillägget.
+1. Navigate to [RustMailer Extension README](./extension/README.md) for detailed installation instructions.
+2. Open Gmail and interact with emails directly through the extension.
 
-### **2. Rust-backend**
-Följ dessa steg för att sätta upp och köra backenden:
+### **2. Rust Backend**
+Follow these steps to set up and run the backend:
 
-1. Navigera till [RustMailer Backend README](./backend/README.md) för detaljerade instruktioner.
-2. Starta Rust-servern:
+1. Navigate to [RustMailer Backend README](./backend/README.md) for detailed instructions.
+2. Start the Rust server:
    ```bash
    cargo run
    ```
-3. Anslut backenden till Chrome-tillägget via den specificerade API-endpointen.
+3. Connect the backend to the Chrome extension via the specified API endpoint.
 
 ---
 
-## Kommunikation mellan tillägget och backenden
+## Communication Between Extension and Backend
 
-- **Dataflöde**:
-  1. Chrome-tillägget skickar e-postinnehållet till backenden via en HTTP POST-förfrågan.
-  2. Rust-backenden bearbetar datan och returnerar analyserade resultat.
-  3. Resultatet visas i popupen i tillägget.
+- **Data Flow**:
+  1. The Chrome extension sends email content to the backend via an HTTP POST request.
+  2. The Rust backend processes the data and returns analyzed results.
+  3. The results are displayed in the extension popup.
 
-- **Exempel på API-anrop**:
+- **Example API Request**:
   - **Endpoint**: `/analyze`
-  - **Metod**: `POST`
+  - **Method**: `POST`
   - **Request body**:
     ```json
     {
-        "email_content": "Det här är e-postens innehåll..."
+        "email_content": "This is the email content..."
     }
     ```
   - **Response body**:
     ```json
     {
-        "analysis": "Analyserade resultat från backenden..."
+        "analysis": "Analysis results from the backend..."
     }
     ```
 
 ---
 
-## Tekniker och Verktyg
+## Technologies Used
 
-- **Frontend (Chrome-tillägg)**:
+- **Frontend (Chrome Extension)**:
   - HTML, CSS, JavaScript.
   - Chrome Extensions API.
 
 - **Backend (Rust)**:
-  - Rocket eller Actix-web för HTTP-server.
-  - Serde för JSON-serialisering och deserialisering.
-  - Effektiva algoritmer för bearbetning av text.
+  - Rocket or Actix-web for the HTTP server.
+  - Serde for JSON serialization and deserialization.
+  - Efficient algorithms for text processing.
 
 ---
 
-## Bidra till projektet
+## Contributing
 
-1. Forka projektet.
-2. Skapa en ny branch (`git checkout -b feature/YourFeature`).
-3. Gör dina ändringar och commit:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit:
    ```bash
    git commit -m "Add YourFeature"
    ```
-4. Push till din branch:
+4. Push to your branch:
    ```bash
    git push origin feature/YourFeature
    ```
-5. Öppna en Pull Request.
+5. Open a Pull Request.
 
 ---
 
-## Licens
+## License
 
-Detta projekt är licensierat under MIT-licensen. Se filen [LICENSE](./LICENSE.txt) för mer information.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE.txt) file for details.
 
 ---
 
-## Författare
+## Authors
 
-- **[Karl Kowal]** - Utvecklare
-- **[Ditt GitHub Profil](https://github.com/K0nny16)**
+- **[Karl Kowal]** - Developer
+- **[GitHub Profile](https://github.com/K0nny16)**
 
 ---
