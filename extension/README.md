@@ -38,23 +38,6 @@ RustMailer is a sleek and modern Chrome extension designed to analyze emails dir
 2. Right-click and select **"Analyze selected text"** from the context menu.
 3. The selected text will be processed and displayed in the console (or use your own logic to handle it).
 
-## Project Structure
-
-```
-rustmailer/
-├── icons/                    # Folder for icons (16x16, 48x48, 128x128)
-│   ├── rustmailer-icon-16.png
-│   ├── rustmailer-icon-48.png
-│   ├── rustmailer-icon-128.png
-├── web/
-│   ├── JS/
-│   │   ├── popup.js          # Handles popup logic
-│   │   ├── content_script.js # Handles message and email analysis logic
-│   │   ├── background.js     # Manages context menu
-│   ├── popup.html            # Popup interface
-│   ├── styles.css            # Styling for the popup
-├── manifest.json             # Chrome extension configuration
-```
 
 ## Technologies Used
 

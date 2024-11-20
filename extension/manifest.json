@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "RustyMailer",
     "version": "1.0",
-    "description": "Easy way to analyze emails with the power of Rust and WASM.",
+    "description": "Easy way to analyze G-mails and selected text with the power of Rust and WASM.",
     "permissions": ["activeTab","scripting","contextMenus"],
     "action":{
         "default_popup": "web/popup.html",
