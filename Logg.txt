@@ -35,3 +35,8 @@ Skickar det sedan som en action till Content_script.js
 
 
         Day 2
+Började med att försöka gör WASM och AI delen tillsammans så att det inte skulle finnas en backend och att allt skulle bara va i extensionen.
+Skippade det för det uppstod konflikter mellan rust-bert och WASM compilern.
+Övergår till att ha en rest backend i rust där jag skriver parsingen i WASM.
+Det är planen för idag.
+Har inte varit jätte produktiv men har lärt mig en del rust och det är väll det viktiga.
