@@ -1,0 +1,7 @@
+##Self 
+
+betyder att funktionen kan använda instansen utan att ägen eller förändra den.
+
+##&str
+
+Tar en string som refferense alltså inte hela stringen utan bara pointern.
