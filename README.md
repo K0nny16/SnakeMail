@@ -30,7 +30,7 @@ https://github.com/user-attachments/assets/aafdc42b-47c8-4125-9c89-03364c56d117
 
 För detaljerade installationsinstruktioner och användning, se respektive README:
 
-🔹 **[Flask Backend README](backend/README.md)** - Hur man startar API:et.  
+🔹 **[Flask Backend README](Backend/README.md)** - Hur man startar API:et.  
 🔹 **[Chrome Extension README](extension/README.md)** - Hur man installerar och använder tillägget.  
 
 ---
