@@ -12,12 +12,23 @@ Detta projekt kombinerar en **Flask-backend** och ett **Chrome-tillägg** för a
 
 ---
 
+## **Demo**
+
+Se en kort video av hur tillägget fungerar:
+
+<video width="600" controls>
+  <source src="assets/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+---
+
 ## **Installation & Användning**
 
 För detaljerade installationsinstruktioner och användning, se respektive README:
 
- **[Flask Backend README](Backend/README.md)** - Hur man startar API:et.  
- **[Chrome Extension README](extension/README.md)** - Hur man installerar och använder tillägget.  
+🔹 **[Flask Backend README](backend/README.md)** - Hur man startar API:et.  
+🔹 **[Chrome Extension README](extension/README.md)** - Hur man installerar och använder tillägget.  
 
 ---
 
@@ -42,6 +53,8 @@ project-root/
 │   │       │-- background.js      # Bakgrundsprocesser
 │   │       │-- content_script.js  # Extraherar text från Gmail
 │   │-- README.md         # Dokumentation för tillägget
+│-- assets/               # Mediafiler som bilder och videor
+│   │-- demo.mp4          # Demo-video av projektet
 │-- README.md             # Övergripande dokumentation för hela projektet
 ```
 
