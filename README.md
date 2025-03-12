@@ -6,7 +6,9 @@ Detta projekt kombinerar en **Flask-backend** och ett **Chrome-tillägg** för a
 
 ## **Projektöversikt**
 
-- **Chrome-tillägg**: Extraherar text från Gmail och skickar den till API:et.
+- **Chrome-tillägg**: 
+    - Extraherar text från Gmail och skickar den till API.
+    - Låter användaren **högerklicka på markerad text** och anaylysera den direkt.
 - **Flask-backend**: Utför sentimentanalys och genererar en sammanfattning.
 - **Resultat**: Visas direkt i Chrome-tilläggets popup-fönster.
 
