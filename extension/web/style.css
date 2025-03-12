@@ -1,19 +1,53 @@
+/* Grundläggande variabler för tema */
+:root {
+    --bg-color: white;
+    --text-color: #333;
+    --btn-bg: #3776AB; /* Python-blå */
+    --btn-hover: #2c5c8a;
+    --btn-active: #1f4a6d;
+    --output-bg: #f9f9f9;
+    --output-border: #d1d1d1;
+    --scroll-thumb: #d93025; /* Gmail-röd */
+    --title-color: #3776AB;
+    --title-border: #FFD43B; /* JavaScript-gul */
+    /* Spinnerfärger */
+    --spinner-color-light: #FFD43B;
+    --spinner-color-light-fade: rgba(255, 212, 59, 0.3);
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --btn-bg: #264d73; /* Mörkare blå för dark mode */
+    --btn-hover: #1c3b5a;
+    --btn-active: #152d46;
+    --output-bg: #1e1e1e;
+    --output-border: #444;
+    --scroll-thumb: #ff5722; /* Orange-röd scrollbar */
+    --title-color: #FFD43B; /* JavaScript-gul */
+    --title-border: #3776AB; /* Python-blå */
+    /* Anpassa spinner-färger för dark mode om önskat */
+    --spinner-color-light: #FFD43B;
+    --spinner-color-light-fade: rgba(255, 212, 59, 0.3);
+}
+
 /* Grundläggande styling */
 body {
     min-width: 300px;
     min-height: 150px;
     max-width: 400px;
     max-height: 500px;
-    background: white;
+    background: var(--bg-color);
+    color: var(--text-color);
     border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #333;
     padding: 15px;
     margin: 0;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Titel */
@@ -23,8 +57,8 @@ h1 {
     margin-bottom: 15px;
     text-align: center;
     letter-spacing: 1.5px;
-    color: #3776AB; /* Python-blå */
-    border-bottom: 2px solid #FFD43B; /* JavaScript-gul */
+    color: var(--title-color);
+    border-bottom: 2px solid var(--title-border);
     padding-bottom: 5px;
 }
 
@@ -33,7 +67,7 @@ button {
     padding: 10px 18px;
     font-size: 14px;
     color: white;
-    background-color: #3776AB; /* Python-blå */
+    background-color: var(--btn-bg);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -43,58 +77,59 @@ button {
 }
 
 button:hover {
-    background-color: #2c5c8a; /* Mörkare blå vid hover */
+    background-color: var(--btn-hover);
     transform: scale(1.05);
 }
 
 button:active {
-    background-color: #1f4a6d;
+    background-color: var(--btn-active);
     transform: scale(0.98);
 }
 
-/* Knappen som spinner */
-.loading {
-    pointer-events: none;
-    color: transparent;
-    position: relative;
-}
-
-.loading::after {
-    content: "";
+/* Dark Mode-knapp i hörnet */
+#toggle-dark-mode {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 18px;
-    height: 18px;
-    margin-top: -9px;
-    margin-left: -9px;
-    border: 3px solid rgba(255, 212, 59, 0.3); /* JavaScript-gul */
-    border-top: 3px solid #FFD43B;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+    top: 10px;
+    right: 10px;
+    padding: 5px 8px;
+    font-size: 12px;
+    background-color: var(--btn-bg);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+#toggle-dark-mode:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.05);
 }
 
-/* Output-box: Ny design */
+#toggle-dark-mode i {
+    font-size: 14px;
+}
+
+/* Output-box */
 .output-box {
     display: none;
     margin-top: 15px;
     padding: 15px;
-    background-color: #f9f9f9; /* Ljus bakgrund för bättre kontrast */
-    border-radius: 10px; /* Rundade hörn */
-    border: 1px solid #d1d1d1; /* Ljusare kant */
-    color: #333;
+    background-color: var(--output-bg);
+    border-radius: 10px;
+    border: 1px solid var(--output-border);
+    color: var(--text-color);
     font-size: 14px;
     text-align: left;
     word-wrap: break-word;
     max-height: 150px;
     max-width: 90%;
     overflow-y: auto;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Mjukare skugga */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Anpassning för text i output-box */
@@ -105,7 +140,7 @@ button:active {
 
 /* Färg på textetiketter */
 .output-box strong {
-    color: #3776AB; /* Python-blå */
+    color: var(--title-color);
     font-weight: bold;
 }
 
@@ -113,12 +148,38 @@ button:active {
 .output-box::-webkit-scrollbar {
     width: 5px;
 }
-
 .output-box::-webkit-scrollbar-thumb {
-    background: #d93025; /* Gmail-röd */
+    background: var(--scroll-thumb);
     border-radius: 4px;
 }
-
 .output-box::-webkit-scrollbar-thumb:hover {
     background: #b2221a;
+}
+/* Spinner-styling */
+.loading {
+    pointer-events: none;
+    color: transparent;
+    position: relative;
+}
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin-top: -9px;
+    margin-left: -9px;
+    border: 3px solid var(--spinner-color-light-fade);
+    border-top: 3px solid var(--spinner-color-light);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Smooth transition för Dark Mode */
+* {
+    transition: background 0.3s ease, color 0.3s ease;
 }
