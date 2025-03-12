@@ -73,6 +73,3 @@ POST /analyze
 ```
 
 ---
-
-**Redo att analysera e-post? Starta Flask och kör!** 
-
