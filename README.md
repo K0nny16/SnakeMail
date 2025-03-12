@@ -16,9 +16,13 @@ Detta projekt kombinerar en **Flask-backend** och ett **Chrome-tillägg** för a
 
 ## **Demo**
 Email demo
+
 https://github.com/user-attachments/assets/a1b7c8ca-dbd7-4fb4-b114-8bc691884f43
 
+---
+
 Textmarkering demo
+
 https://github.com/user-attachments/assets/aafdc42b-47c8-4125-9c89-03364c56d117
 
 ---
