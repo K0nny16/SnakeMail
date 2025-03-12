@@ -57,3 +57,35 @@ document.querySelector("#analyze-btn").addEventListener("click", () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    chrome.storage.local.get("selectedText", (data) => {
+        if (data.selectedText) {
+            console.log("Popup opened with selected text:", data.selectedText);
+
+            // Skicka markerad text till API:et
+            fetch("http://127.0.0.1:5000/analyze", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: data.selectedText })
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log("Flask API Response:", data);
+
+                // Visa resultatet i popupen
+                const outputBox = document.querySelector("#output");
+                outputBox.innerHTML = `
+                    <p><strong>Sentiment:</strong> ${data.data.sentiment.label}</p>
+                    <p><strong>Confidence:</strong> ${(data.data.sentiment.confidence * 100).toFixed(2)}%</p>
+                    <p><strong>Summary:</strong> ${data.data.summary}</p>
+                `;
+                outputBox.style.display = "block";
+            })
+            .catch(error => console.error("API request failed:", error));
+
+            // Rensa lagrad text efter att den har använts
+            chrome.storage.local.remove("selectedText");
+        }
+    });
+});
