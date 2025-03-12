@@ -16,10 +16,7 @@ Detta projekt kombinerar en **Flask-backend** och ett **Chrome-tillägg** för a
 
 Se en kort video av hur tillägget fungerar:
 
-<video width="600" controls>
-  <source src="assets/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/54868723-f3b4-4e2b-bb8d-125a38dfa681
 
 ---
 
