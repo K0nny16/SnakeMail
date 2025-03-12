@@ -1,76 +1,124 @@
+/* Grundläggande styling */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #1e1e1e; 
-    width: 320px;
-    height: 260px;
+    min-width: 300px;
+    min-height: 150px;
+    max-width: 400px;
+    max-height: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #e6e6e6; 
-}
-.popup-container {
-    text-align: center;
+    color: #333;
     padding: 15px;
-    width: 90%;
+    margin: 0;
 }
+
+/* Titel */
 h1 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
-    letter-spacing: 2px;
-    color: #ff7f11; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-    border-bottom: 2px solid #ff7f11; 
+    letter-spacing: 1.5px;
+    color: #3776AB; /* Python-blå */
+    border-bottom: 2px solid #FFD43B; /* JavaScript-gul */
     padding-bottom: 5px;
 }
+
+/* Knappstil */
 button {
-    padding: 12px 20px;
+    padding: 10px 18px;
     font-size: 14px;
-    color: #1e1e1e; 
-    background-color: #ff7f11;
+    color: white;
+    background-color: #3776AB; /* Python-blå */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
+
 button:hover {
-    background-color: #e37000; 
-    transform: scale(1.05); 
+    background-color: #2c5c8a; /* Mörkare blå vid hover */
+    transform: scale(1.05);
 }
+
 button:active {
-    background-color: #b35600; 
-    transform: scale(0.98); 
+    background-color: #1f4a6d;
+    transform: scale(0.98);
 }
+
+/* Knappen som spinner */
+.loading {
+    pointer-events: none;
+    color: transparent;
+    position: relative;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin-top: -9px;
+    margin-left: -9px;
+    border: 3px solid rgba(255, 212, 59, 0.3); /* JavaScript-gul */
+    border-top: 3px solid #FFD43B;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Output-box: Ny design */
 .output-box {
-    display: none; 
+    display: none;
     margin-top: 15px;
     padding: 15px;
-    background-color: #2a2a2a; 
-    border: 1px solid #ff7f11; 
-    border-radius: 8px;
-    color: #e6e6e6; 
-    font-size: 13px;
+    background-color: #f9f9f9; /* Ljus bakgrund för bättre kontrast */
+    border-radius: 10px; /* Rundade hörn */
+    border: 1px solid #d1d1d1; /* Ljusare kant */
+    color: #333;
+    font-size: 14px;
     text-align: left;
     word-wrap: break-word;
-    max-height: 100px;
+    max-height: 150px;
+    max-width: 90%;
     overflow-y: auto;
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Mjukare skugga */
 }
+
+/* Anpassning för text i output-box */
+.output-box p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* Färg på textetiketter */
+.output-box strong {
+    color: #3776AB; /* Python-blå */
+    font-weight: bold;
+}
+
+/* Scrollbar-styling */
 .output-box::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
 }
 
 .output-box::-webkit-scrollbar-thumb {
-    background: #ff7f11;
+    background: #d93025; /* Gmail-röd */
     border-radius: 4px;
 }
 
 .output-box::-webkit-scrollbar-thumb:hover {
-    background: #e37000; 
+    background: #b2221a;
 }

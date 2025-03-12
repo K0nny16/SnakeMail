@@ -9,53 +9,27 @@ class TextSummarizer:
     def remove_redundancy(self, summary):
         sentences = summary.split('. ')
         seen = set()
-        filtered = []
-
-        for sentence in sentences:
-            if sentence not in seen:
-                filtered.append(sentence)
-                seen.add(sentence)
-
+        filtered = [s for s in sentences if not (s in seen or seen.add(s))]
         return '. '.join(filtered)
 
-
     def clean_summary(self, summary):
-        # Ta bort onödiga mellanslag och bindestreck
         summary = summary.replace(' -', ' ').replace('  ', ' ')
-        # Lägg till ett mellanslag efter punkt om saknas
         summary = summary.replace('.', '. ')
-        return summary
-
+        return summary.strip()
 
     def summarize_text(self, text, language="sv", max_length=130, min_length=30):
         if len(text.split()) < 10:
             return text  # Returnera texten som den är om den är för kort
 
-        if language == "sv":
-            try:
-                # Översätt svenska till engelska
+        try:
+            if language == "sv":
                 translated = self.translator.translate(text, src="sv", dest="en").text
-
-                # Skapa sammanfattning
                 summarized = self.en_summarizer(translated, max_length=max_length, min_length=min_length, do_sample=False)
                 summary_en = summarized[0]['summary_text']
-
-                # Översätt sammanfattningen tillbaka till svenska
                 summary_sv = self.translator.translate(summary_en, src="en", dest="sv").text
-
                 return self.clean_summary(summary_sv)
-            except Exception as e:
-                print("Error during summarization or translation:", str(e))
-                return f"Error during summarization: {str(e)}"
-
-        elif language == "en":
-            try:
+            elif language == "en":
                 result = self.en_summarizer(text, max_length=max_length, min_length=min_length, do_sample=False)
-                summary = result[0]['summary_text']
-                return self.remove_redundancy(summary)
-            except Exception as e:
-                print("Error generating summary in English:", str(e))
-                return f"Error generating summary: {str(e)}"
-
-        else:
-            return "Unsupported language"
+                return self.remove_redundancy(result[0]['summary_text'])
+        except Exception as e:
+            return f"Summarization error: {str(e)}"
