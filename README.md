@@ -14,8 +14,6 @@ Detta projekt kombinerar en **Flask-backend** och ett **Chrome-tillägg** för a
 
 ## **Demo**
 
-Se en kort video av hur tillägget fungerar:
-
 https://github.com/user-attachments/assets/54868723-f3b4-4e2b-bb8d-125a38dfa681
 
 ---
