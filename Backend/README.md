@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 **Starta API:et**
+## **Starta API:et**
 ```bash
 python app.py
 ```
